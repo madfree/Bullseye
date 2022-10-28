@@ -26,18 +26,22 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .lineSpacing(4.0)
                     .font(.footnote)
+                    .foregroundColor(Color("TextColor"))
                 Text(String(game.target))
                     .kerning(-1.0)
                     .font(.largeTitle)
                     .fontWeight(.black)
+                    .foregroundColor(Color("TextColor"))
                 HStack {
                     Text("1")
                         .font(.body)
                         .fontWeight(.bold)
+                        .foregroundColor(Color("TextColor"))
                     Slider(value: $sliderValue, in: 1.0...100.0)
                     Text("100")
                         .font(.body)
                         .fontWeight(.bold)
+                        .foregroundColor(Color("TextColor"))
                 }
                 .padding()
                 Button(action: {
@@ -72,8 +76,13 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        ContentView()
+            .previewLayout(.fixed(width: 568, height: 320))
+        ContentView()
+            .preferredColorScheme(.dark)
         
         ContentView()
+            .preferredColorScheme(.dark)
             .previewLayout(.fixed(width: 568, height: 320))
     }
 }
